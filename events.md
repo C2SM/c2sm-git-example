@@ -4,7 +4,7 @@ C2SM organises workshops and technical training for its community.
 
 ## Git courses
 
-Two courses form the **C2SM Git Series**, run annually:
+Two courses make up the **C2SM Git Courses**, run annually:
 
 - **Git: First Steps** — an introduction for people who have never used Git. Commits, branches,
   merge conflicts, remotes.
