@@ -1,0 +1,31 @@
+name: Bug report
+description: Something is broken - a bad link, a failing check, a page that does not render
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: Describe what you observed.
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect instead?
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: How can somebody else see it?
+      description: The steps needed to reproduce it. A link is often enough.
+      placeholder: |
+        1. Open models.md
+        2. Click the link to ...
+        3. It returns a 404
+    validations:
+      required: true

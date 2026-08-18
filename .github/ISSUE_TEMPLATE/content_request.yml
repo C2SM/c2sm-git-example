@@ -1,0 +1,56 @@
+name: Content request
+description: Suggest something to add, change or remove on these pages
+title: "[Content] "
+labels: ["content"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time. Filling this in properly means somebody can act on it
+        without having to ask you three follow-up questions first.
+
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What kind of change?
+      options:
+        - Add a new page or section
+        - Correct something that is wrong
+        - Add myself to the participants list
+        - Add a glossary entry
+        - Something else
+    validations:
+      required: true
+
+  - type: input
+    id: page
+    attributes:
+      label: Which page?
+      description: The file this concerns, if it already exists.
+      placeholder: glossary.md
+    validations:
+      required: false
+
+  - type: textarea
+    id: what
+    attributes:
+      label: What should change?
+      description: Describe the change itself.
+    validations:
+      required: true
+
+  - type: textarea
+    id: why
+    attributes:
+      label: Why?
+      description: What is wrong, missing or confusing at the moment?
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: offer
+    attributes:
+      label: Would you like to make the change yourself?
+      options:
+        - label: Yes, I intend to open a pull request for this
+          required: false

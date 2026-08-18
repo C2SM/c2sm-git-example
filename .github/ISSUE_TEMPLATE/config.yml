@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: C2SM User Landing Page
+    url: https://c2sm.github.io
+    about: The real C2SM documentation. This repository is only course material.
+  - name: Git course material
+    url: https://github.com/C2SM/git-course
+    about: The exercises that use this repository.

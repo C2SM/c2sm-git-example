@@ -1,0 +1,55 @@
+name: Checks
+
+# Runs on every pull request so that reviewers never have to point out a broken
+# link or a stray space. Course participants see these as the status checks at
+# the bottom of their pull request.
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  whitespace:
+    name: Whitespace and newlines
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: No trailing whitespace
+        run: |
+          if grep -rInE ' +$' --include='*.md' .; then
+            echo "::error::Lines above end in whitespace. Remove it."
+            exit 1
+          fi
+          echo "No trailing whitespace found."
+
+      - name: Every file ends with a newline
+        run: |
+          status=0
+          while IFS= read -r f; do
+            if [ -n "$(tail -c 1 "$f")" ]; then
+              echo "::error file=$f::File does not end with a newline."
+              status=1
+            fi
+          done < <(find . -name '*.md' -not -path './.git/*')
+          [ "$status" -eq 0 ] && echo "All files end with a newline."
+          exit $status
+
+  links:
+    name: Markdown links
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Check links
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: >-
+            --no-progress
+            --accept 200,206,429
+            --exclude-path ./.git
+            --exclude-file .lycheeignore
+            './**/*.md'
+          fail: true

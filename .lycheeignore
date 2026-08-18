@@ -1,0 +1,4 @@
+# Patterns excluded from external link checking (regex, one per line)
+# Placeholders that are meant to be replaced by the reader, not visited.
+^https://github\.com/your-username
+^https://github\.com/<
