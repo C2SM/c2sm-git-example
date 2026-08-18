@@ -32,3 +32,5 @@ Terms and abbreviations that come up around C2SM.
 **NetCDF** — Network Common Data Form, the standard file format for gridded climate data.
 
 **Spack** — A package manager for supercomputers, used to build models reproducibly.
+
+**Test** — a temporary entry to verify the checks run.
