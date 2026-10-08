@@ -19,6 +19,8 @@ Terms and abbreviations that come up around C2SM.
 
 **CSCS** — Swiss National Supercomputing Centre, in Lugano, where much C2SM computing happens.
 
+**ECMWF** - European Cennter for Medium-Range Weather Forecast. 
+
 **EXCLAIM** — An ETH Zurich project targeting kilometre-scale climate simulation on GPUs.
 
 **ExtPar** — Tool generating external parameter files (topography, land use, soil) for models.
